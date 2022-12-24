@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+<dataset>
+    <TB_USUARIO 
+                TXT_NOME="Raphael" 
+                TXT_SOBRENOME="Alcantara" 
+                TXT_CPF="12345678911"  
+                END_TXT_CEP="rua ifpe"
+                END_TXT_CIDADE="cidade"
+                END_TXT_BAIRRO="bairro"
+                END_NUMERO="123"
+                 DISC_USUARIO="p"/>
+    
+        <TB_PERSONAL
+                TXT_SENHA="123456"
+                TXT_MATRICULA="654321"
+                ID="1" />
+    
+    
+   
+    <TB_USUARIO 
+                TXT_NOME="Joao" 
+                TXT_SOBRENOME="Alcantara" 
+                TXT_CPF="12345678911"  
+                END_TXT_CEP="rua ifpe"
+                END_TXT_CIDADE="cidade"
+                END_TXT_BAIRRO="bairro"
+                END_NUMERO="123"
+                DISC_USUARIO="d"/>
+    
+     <TB_ADMINISTRADOR
+                TXT_SENHA="123456"
+                TXT_MATRICULA="654321"
+                ID="2" />
+    
+    
+    <TB_USUARIO 
+                TXT_NOME="Milo" 
+                TXT_SOBRENOME="Alcantara" 
+                TXT_CPF="12345678911"  
+                END_TXT_CEP="rua ifpe"
+                END_TXT_CIDADE="cidade"
+                END_TXT_BAIRRO="bairro"
+                END_NUMERO="123"
+                DISC_USUARIO="a"/>
+    
+     <TB_TREINO
+                DT_INICIO = "2022-11-25"
+                DT_fim = "2022-12-30"
+                ID_PERSONAL="1"
+                TXT_DESCRICAO="Treino iniciante Milo"
+        />
+    
+     <TB_EXERCICIO
+                TXT_EXERCICIO="Supíno"
+                TXT_OBSERVACAO="Exercicio feito com barra"
+                QNT_SERIE_REPETICAO="4x15"
+     />
+     
+     <TB_EXERCICIO
+                TXT_EXERCICIO="Crucifixo"
+                TXT_OBSERVACAO="Exercicio feito na máquina de crucifixo"
+                QNT_SERIE_REPETICAO="4x15"
+     />
+     
+     <TB_EXERCICIO
+                TXT_EXERCICIO="Supíno Inclinado"
+                TXT_OBSERVACAO="Exercicio feito com halter no banco inclinado"
+                QNT_SERIE_REPETICAO="4x15"
+     />
+     
+     <TB_TREINO_EXERCICIOS
+                ID_TREINO="1"
+                ID_EXERCICIO="1"
+     />
+     
+     <TB_TREINO_EXERCICIOS
+                ID_TREINO="1"
+                ID_EXERCICIO="2"
+     />
+     
+     <TB_TREINO_EXERCICIOS
+                ID_TREINO="1"
+                ID_EXERCICIO="3"
+     />
+    
+    <TB_ALUNO
+            ID="1"
+            ID_TREINO="1"
+    />
+   
+    
+    <TB_TELEFONE 
+            ID_USUARIO = "1"
+            TXT_NUM_TELEFONE="81997901217" 
+    />
+    
+     <TB_TELEFONE 
+            ID_USUARIO = "2"
+            TXT_NUM_TELEFONE="81997901217" />
+     
+      <TB_TELEFONE 
+            ID_USUARIO = "3"
+            TXT_NUM_TELEFONE="81997901217" />
+      
+    
+
+    
+   
+
+</dataset>
+
