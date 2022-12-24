@@ -18,14 +18,15 @@ import java.util.Date;
  * @author gabri
  */
 @Entity
-@Table(name="TB_SALGADO") 
+@Table(name = "TB_SALGADO")
 @DiscriminatorValue(value = "S")
-@PrimaryKeyJoinColumn(name="ID_PRODUTO", referencedColumnName = "ID")
-public class Salgado extends Produto{
-    
+@PrimaryKeyJoinColumn(name = "ID_PRODUTO", referencedColumnName = "ID")
+public class Salgado extends Produto {
+
     @Column(length = 15, name = "TXT_DATAFABRICACAO")
     @Temporal(TemporalType.DATE)
     private Date dataFrabricacao;
+    
     @Column(length = 50, name = "TXT_DESCRICAO")
     private String descricao;
 
@@ -44,7 +45,5 @@ public class Salgado extends Produto{
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    
-    
-    
+
 }

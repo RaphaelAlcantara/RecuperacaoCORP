@@ -17,16 +17,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.Objects;
+import java.util.List;
 
 /**
  *
@@ -38,22 +38,32 @@ public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "dono", cascade = CascadeType.ALL)
+    
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "dono")
     private CartaoCredito cartao;
-     @Column(name = "TXT_CPF", nullable = false, length = 14, unique = true)
+    
+    @Column(name = "TXT_CPF", nullable = false, length = 14, unique = true)
     private String cpf;
+    
     @Column(name = "TXT_NOME", nullable = false, length = 255)
     private String nome;
+    
     @Column(name = "TXT_EMAIL", nullable = false, length = 50)
     private String email;
+    
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_NASCIMENTO", nullable = true)
     private Date dataNascimento;
+    
+    @OneToMany(mappedBy = "cliente", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    protected List<Venda> vendas;
+    
     @ElementCollection 
     @CollectionTable(name = "TB_CONTATOS", 
             joinColumns = @JoinColumn(name = "ID_CLIENTE", nullable = false))
     @Column(name = "TXT_NUM_CONTATOS", nullable = false, length = 20)
     private Collection<String> contatos;
+    
     @Embedded
     protected Endereco endereco;
     
@@ -108,6 +118,25 @@ public class Cliente {
     public Collection<String> getContatos() {
         return contatos;
     }
+    
+    public void addContato(String contato) {
+        if (contatos == null) {
+            contatos = new HashSet<>();
+        }
+        contatos.add(contato);
+    }
+
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(Venda venda) {
+        if(this.vendas == null){
+            this.vendas = new ArrayList<>();
+        }
+        
+        this.vendas.add(venda);
+    }
 
     public Endereco getEndereco() {
         return endereco;
@@ -134,8 +163,5 @@ public class Cliente {
         Cliente other = (Cliente) object;
         return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
     }
-
-    
-    
     
 }

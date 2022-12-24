@@ -25,6 +25,7 @@ public class Doce extends Produto{
     @Column(length = 15, name = "TXT_DATAFABRICACAO")
     @Temporal(TemporalType.DATE)
     private Date dataFrabricacao;
+    
     @Column(length = 50, name = "TXT_DESCRICAO")
     private String descricao;
 

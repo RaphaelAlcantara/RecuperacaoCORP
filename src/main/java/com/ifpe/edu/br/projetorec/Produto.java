@@ -13,8 +13,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
@@ -24,35 +22,38 @@ import java.util.List;
  *
  * @author user
  */
-
 @Entity
 @Table(name = "TB_PRODUTO")
-@Inheritance(strategy = InheritanceType.JOINED) 
-@DiscriminatorColumn(name = "DISC_MERCADORIA", 
+@Inheritance(strategy = InheritanceType.JOINED)
+@DiscriminatorColumn(name = "DISC_MERCADORIA",
         discriminatorType = DiscriminatorType.STRING, length = 1)
 public abstract class Produto {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "TXT_NOME", length = 50, nullable = false)
     private String nome;
+
     @Column(name = "TXT_TIPO", length = 50, nullable = false)
     private String tipo;
+
     @Column(name = "TXT_PRECO", length = 50, nullable = false)
-    private double preco;    
+    private double preco;
+
     @ManyToMany(mappedBy = "produtos")
-    @JoinTable(name = "TB_PRODUTO_LOJA", joinColumns = {
-        @JoinColumn(name = "ID_LOJA")},
-            inverseJoinColumns = {
-                @JoinColumn(name = "ID_PRODUTO")})
     private List<Loja> lojas;
 
-     public Produto() {
+    @ManyToMany(mappedBy = "produtos")
+    private List<Venda> vendas;
+
+    public Produto() {
         this.lojas = new ArrayList<>();
-        
+
     }
-     
-      public void adicionar(Loja loja) {
+
+    public void adicionar(Loja loja) {
         lojas.add(loja);
     }
 
@@ -71,6 +72,7 @@ public abstract class Produto {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getTipo() {
         return tipo;
     }
@@ -83,8 +85,24 @@ public abstract class Produto {
         return lojas;
     }
 
-    public void setLojas(List<Loja> lojas) {
-        this.lojas = lojas;
+    public void setLojas(Loja loja) {
+        if (this.lojas == null) {
+            this.lojas = new ArrayList<>();
+        }
+
+        this.lojas.add(loja);
+    }
+
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(Venda venda) {
+        if (this.vendas == null) {
+            this.vendas = new ArrayList<>();
+        }
+        
+        this.vendas.add(venda);
     }
 
     public double getPreco() {
@@ -94,17 +112,15 @@ public abstract class Produto {
     public void setPreco(double preco) {
         this.preco = preco;
     }
-    
 
-    
-     @Override
+    @Override
     public int hashCode() {
         int hash = 0;
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
-    
-     @Override
+
+    @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
         if (!(object instanceof Produto)) {
@@ -119,6 +135,4 @@ public abstract class Produto {
         return "Produto{" + "id=" + id + '}';
     }
 
-
-    
 }

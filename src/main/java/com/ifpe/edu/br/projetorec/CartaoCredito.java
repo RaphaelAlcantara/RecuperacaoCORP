@@ -4,6 +4,7 @@
  */
 package com.ifpe.edu.br.projetorec;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -28,14 +29,18 @@ public class CartaoCredito implements Serializable  {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
-    private Long id;  
-    @OneToOne(fetch = FetchType.LAZY)
+    private Long id; 
+    
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID")
     private Cliente dono;
+    
     @Column(name = "TXT_BANDEIRA", nullable = false, length = 100)
     private String bandeira;
+    
     @Column(name = "TXT_NUMERO", nullable = false, length = 30)
     private String numero;
+    
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_EXPIRACAO", nullable = false)
     private Date dataExpiracao;
@@ -54,6 +59,7 @@ public class CartaoCredito implements Serializable  {
 
     public void setDono(Cliente dono) {
         this.dono = dono;
+        this.dono.setCartao(this);
     }
 
     public String getBandeira() {
@@ -102,8 +108,5 @@ public class CartaoCredito implements Serializable  {
     public String toString() {
         return "CartaoCredito{" + "id=" + id + '}';
     }
-
-   
-
     
 }
