@@ -5,10 +5,16 @@
 package com.ifpe.edu.br.projetorec;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.DiscriminatorColumn;
+import jakarta.persistence.DiscriminatorType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import java.util.ArrayList;
@@ -21,19 +27,24 @@ import java.util.List;
 
 @Entity
 @Table(name = "TB_PRODUTO")
-public class Produto {
+@Inheritance(strategy = InheritanceType.JOINED) 
+@DiscriminatorColumn(name = "DISC_MERCADORIA", 
+        discriminatorType = DiscriminatorType.STRING, length = 1)
+public abstract class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "TXT_NOME", length = 50, nullable = false)
     private String nome;
-    @Column(name = "TXT_CODIGO", length = 50, nullable = false)
-    private String codigo;
     @Column(name = "TXT_TIPO", length = 50, nullable = false)
     private String tipo;
-    @Column(name = "TXT_VALIDADE", length = 50, nullable = false)
-    private String validade;    
+    @Column(name = "TXT_PRECO", length = 50, nullable = false)
+    private double preco;    
     @ManyToMany(mappedBy = "produtos")
+    @JoinTable(name = "TB_PRODUTO_LOJA", joinColumns = {
+        @JoinColumn(name = "ID_LOJA")},
+            inverseJoinColumns = {
+                @JoinColumn(name = "ID_PRODUTO")})
     private List<Loja> lojas;
 
      public Produto() {
@@ -60,29 +71,12 @@ public class Produto {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    public String getCodigo() {
-        return codigo;
-    }
-
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
-
     public String getTipo() {
         return tipo;
     }
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
-    }
-
-    public String getValidade() {
-        return validade;
-    }
-
-    public void setValidade(String validade) {
-        this.validade = validade;
     }
 
     public List<Loja> getLojas() {
@@ -92,6 +86,15 @@ public class Produto {
     public void setLojas(List<Loja> lojas) {
         this.lojas = lojas;
     }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+    
 
     
      @Override

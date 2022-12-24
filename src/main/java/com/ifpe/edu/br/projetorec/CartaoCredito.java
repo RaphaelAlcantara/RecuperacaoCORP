@@ -10,6 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
@@ -22,15 +23,15 @@ import java.util.Date;
  * @author user
  */
 @Entity
-@Table(name = "TB_CARTAO_CREDITO")
+@Table(name = "TB_CARTAOCREDITO")
 public class CartaoCredito implements Serializable  {
     
     @Id
-    @Column(name = "ID_CARTAO_CREDITO")
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Long id;  
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "cartaoCredito", optional = false)
-    private Comprador dono;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID")
+    private Cliente dono;
     @Column(name = "TXT_BANDEIRA", nullable = false, length = 100)
     private String bandeira;
     @Column(name = "TXT_NUMERO", nullable = false, length = 30)
@@ -47,11 +48,11 @@ public class CartaoCredito implements Serializable  {
         this.id = id;
     }
 
-    public Comprador getDono() {
+    public Cliente getDono() {
         return dono;
     }
 
-    public void setDono(Comprador dono) {
+    public void setDono(Cliente dono) {
         this.dono = dono;
     }
 
@@ -88,7 +89,7 @@ public class CartaoCredito implements Serializable  {
 
     @Override
     public boolean equals(Object object) {
-        if (!(object instanceof Comprador)) {
+        if (!(object instanceof Cliente)) {
             return false;
         }
 

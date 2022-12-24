@@ -6,8 +6,6 @@ package com.ifpe.edu.br.projetorec;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,10 +13,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -30,30 +28,31 @@ import java.util.List;
 @Table(name = "TB_LOJA")
 public class Loja {
     
-     @Id
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    protected Long id;
     @ManyToMany(fetch = FetchType.LAZY)
     @JoinTable(name = "TB_LOJA_PRODUTO", joinColumns = {
         @JoinColumn(name = "ID_LOJA")},
             inverseJoinColumns = {
                 @JoinColumn(name = "ID_PRODUTO")})
-    private List<Produto> produtos;
+    protected List<Produto> produtos;
+    @OneToMany(fetch = FetchType.LAZY)
+    protected List<Venda> vendas;
     @Column(name = "TXT_CNPJ", nullable = false, length = 14, unique = true)
-    private String cpf;
+    protected String cpf;
     @Column(name = "TXT_LOGIN", nullable = false, length = 50, unique = true)
-    private String login;
+    protected String login;
     @Column(name = "TXT_NOME", nullable = false, length = 255)
-    private String nome;
+    protected String nome;
     @Column(name = "TXT_EMAIL", nullable = false, length = 50)
-    private String email;
+    protected String email;
     @Column(name = "TXT_SENHA", nullable = false, length = 20)
-    private String senha;
+    protected String senha;
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_NASCIMENTO", nullable = true)
-    private Date dataNascimento;
-    private Object produto;
-    
+    protected Date dataNascimento;
+       
     public Long getId() {
         return id;
     }
@@ -62,21 +61,21 @@ public class Loja {
         this.id = id;
     }
 
-   public void adicionar(Produto produto){
-      if (this.produtos == null) {
-            this.produtos = new ArrayList<>();
-        }
-
-        produtos.add(produto);
-        produto.adicionar(this);
-   }
-   
-   
-
- 
-
-    public List<Produto> getProduto() {
+    public List<Produto> getProdutos() {
         return produtos;
+    }
+
+    public void setProdutos(List<Produto> produtos) {
+        this.produtos = produtos;
+    }    
+    
+
+    public List<Venda> getVendas() {
+        return vendas;
+    }
+
+    public void setVendas(List<Venda> vendas) {
+        this.vendas = vendas;
     }
 
    public String getCpf() {
