@@ -39,7 +39,7 @@ public class Cliente {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @OneToOne(fetch = FetchType.LAZY, mappedBy = "dono")
+    @OneToOne(fetch = FetchType.LAZY, mappedBy = "dono", cascade = CascadeType.ALL)
     private CartaoCredito cartao;
     
     @Column(name = "TXT_CPF", nullable = false, length = 14, unique = true)
