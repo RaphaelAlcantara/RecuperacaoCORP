@@ -45,19 +45,13 @@ public class Loja {
     protected List<Venda> vendas;
 
     @Column(name = "TXT_CNPJ", nullable = false, length = 14, unique = true)
-    protected String cpf;
-
-    @Column(name = "TXT_LOGIN", nullable = false, length = 50, unique = true)
-    protected String login;
+    protected String cnpj;
 
     @Column(name = "TXT_NOME", nullable = false, length = 255)
     protected String nome;
 
     @Column(name = "TXT_EMAIL", nullable = false, length = 50)
     protected String email;
-
-    @Column(name = "TXT_SENHA", nullable = false, length = 20)
-    protected String senha;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "DT_NASCIMENTO", nullable = true)
@@ -96,20 +90,12 @@ public class Loja {
         this.vendas.add(venda);
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCnpj() {
+        return cnpj;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
     }
 
     public String getNome() {
@@ -126,14 +112,6 @@ public class Loja {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getSenha() {
-        return senha;
-    }
-
-    public void setSenha(String senha) {
-        this.senha = senha;
     }
 
     public Date getDataNascimento() {
