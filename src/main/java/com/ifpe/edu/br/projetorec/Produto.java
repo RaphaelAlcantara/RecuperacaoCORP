@@ -25,7 +25,7 @@ import java.util.List;
 @Entity
 @Table(name = "TB_PRODUTO")
 @Inheritance(strategy = InheritanceType.JOINED)
-@DiscriminatorColumn(name = "P",
+@DiscriminatorColumn(name = "DISC_PRODUTO",
         discriminatorType = DiscriminatorType.STRING, length = 1)
 public abstract class Produto {
 
