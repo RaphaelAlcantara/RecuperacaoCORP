@@ -61,6 +61,6 @@
     <property name="sun.cpu.endian" value="little"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="jpa.TestCliente" name="persistCliente" time="0.032"/>
-  <testcase classname="jpa.TestCliente" name="consultarCliente" time="0.011"/>
+  <testcase classname="jpa.TestCliente" name="persistCliente" time="0.028"/>
+  <testcase classname="jpa.TestCliente" name="consultarCliente" time="0.015"/>
 </testsuite>

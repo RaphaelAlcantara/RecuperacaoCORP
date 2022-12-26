@@ -18,10 +18,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this 
     <TB_LOJA TXT_CNPJ="43.856.021/0001-78" TXT_NOME="Dona Ju kit Festas" TXT_EMAIL="donaju@contato.com" DT_NASCIMENTO="2017-10-31"/>
     <TB_LOJA TXT_CNPJ="42.965.011/0001-52" TXT_NOME="Padaria Da Esquina" TXT_EMAIL="pdesquina1@contato.com" DT_NASCIMENTO="2022-09-21"/>
     
-    <TB_PRODUTO TXT_NOME="Coxinha" TXT_TIPO="Salgado" TXT_PRECO="3.00" />
-    <TB_PRODUTO TXT_NOME="Bolinha de Queijo" TXT_TIPO="Salgado" TXT_PRECO="1.00" />
-    <TB_PRODUTO TXT_NOME="Brigadeiro" TXT_TIPO="Doce" TXT_PRECO="1.00" />
-    <TB_PRODUTO TXT_NOME="Bem-Casado" TXT_TIPO="Doce" TXT_PRECO="1.00" />
+    <TB_PRODUTO DISC_PRODUTO="S" TXT_NOME="Coxinha" TXT_TIPO="Salgado" TXT_PRECO="3.00" />
+    <TB_PRODUTO DISC_PRODUTO="S" TXT_NOME="Bolinha de Queijo" TXT_TIPO="Salgado" TXT_PRECO="1.00" />
+    <TB_PRODUTO DISC_PRODUTO="D" TXT_NOME="Brigadeiro" TXT_TIPO="Doce" TXT_PRECO="1.00" />
+    <TB_PRODUTO DISC_PRODUTO="D" TXT_NOME="Bem-Casado" TXT_TIPO="Doce" TXT_PRECO="1.00" />
     
     <TB_SALGADO TXT_DATAFABRICACAO="2022-12-24" TXT_DESCRICAO="Coxinha de Frango com Catupiry" ID_PRODUTO="1" />
     <TB_SALGADO TXT_DATAFABRICACAO="2022-12-24" TXT_DESCRICAO="Bolinha de Queijo grande" ID_PRODUTO="2" />

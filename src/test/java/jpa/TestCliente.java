@@ -11,9 +11,7 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,7 +19,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
     /*
  *
@@ -57,6 +54,7 @@ private static EntityManagerFactory emf;
         }
         em.close();
     }
+    
     @Test
     public void consultarCliente() {
         Cliente cliente = em.find(Cliente.class, 1L);
@@ -64,10 +62,12 @@ private static EntityManagerFactory emf;
         assertEquals("12345678911", cliente.getCpf());
         assertEquals("Raphael", cliente.getNome());
         assertEquals("rapha@gmail.com", cliente.getEmail());
-        assertEquals(2, cliente.getContatos().size());
-        assertEquals("VISA", cliente.getCartao().getBandeira());
-        assertTrue(cliente.getContatos().contains("(81) 97654-9685"));
+        assertEquals("4073020000000002", cliente.getCartao().getNumero());
+        assertEquals("Sun Dec 12 00:00:00 BRST 1999", cliente.getDataNascimento().toString());
+        assertTrue(cliente.getVendas().size() == 1);
+        assertTrue(cliente.getContatos().size() == 2);
     }
+    
     @Test
     public void persistCliente()
     {
@@ -78,25 +78,41 @@ private static EntityManagerFactory emf;
         
         CartaoCredito cd = new CartaoCredito();
         cd.setBandeira("CU");
-        Calendar it1 = Calendar.getInstance();
-        it1.set(Calendar.YEAR, 2022);
-        it1.set(Calendar.MONTH, Calendar.NOVEMBER);
-        it1.set(Calendar.DAY_OF_MONTH, 19);
-        cd.setDataExpiracao(it1.getTime());
-        cliente.setDataNascimento(it1.getTime());
+        
+        Calendar cexp = Calendar.getInstance();
+        cexp.set(Calendar.YEAR, 2022);
+        cexp.set(Calendar.MONTH, Calendar.NOVEMBER);
+        cexp.set(Calendar.DAY_OF_MONTH, 19);
+        
+        cd.setDataExpiracao(cexp.getTime());
         cd.setNumero("123123");
         cd.setDono(cliente);
         cliente.setCartao(cd);
+        
+        cliente.setDataNascimento(cexp.getTime());
+        
         Endereco en = new Endereco();
         en.setBairro("Tejipio");
         en.setCep("21313");
         en.setnCasa("432");
         en.setCidade("Recife");
         cliente.setEndereco(en);
+        
+        cliente.addContato("(81) 01122-3344");
+        cliente.addContato("(81) 05566-7788");
+        
         em.persist(cliente);
         em.flush();
-        Cliente cliente2 = em.find(Cliente.class, 3L);
-        assertNotNull(cliente2);
-        assertEquals("Pedrim", cliente2.getNome());
+        
+        Cliente clienteAux = em.find(Cliente.class, 3L);
+        assertNotNull(clienteAux);
+        assertEquals("Pedrim", clienteAux.getNome());
+        assertEquals("pedrim@pedrim", clienteAux.getEmail());
+        assertEquals("112233", clienteAux.getCpf());
+        assertEquals(cexp.getTime(), clienteAux.getDataNascimento());
+        assertEquals("123123", clienteAux.getCartao().getNumero());
+        assertEquals("Tejipio", clienteAux.getEndereco().getBairro());
+        assertTrue(clienteAux.getContatos().size() == 2);
     }
+    
 }
