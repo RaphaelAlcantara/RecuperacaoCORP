@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="GymTADS" uuid="1e3ab501-af59-4600-a68d-3eb63a3fef9d">
-      <driver-ref>derby.embedded</driver-ref>
+    <data-source source="LOCAL" name="Apache Derby (Remote)" uuid="2f1d904e-f4bc-4d79-a2ad-83728c319ea4">
+      <driver-ref>derby.remote</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
-      <jdbc-url>jdbc:derby:$USER_HOME$/Documents/Projetos_Java/repositorioDerby/GymTADS</jdbc-url>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.apache.derby.jdbc.ClientDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby://localhost:1527/LANCHE;create=true</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
   </component>

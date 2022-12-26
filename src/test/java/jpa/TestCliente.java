@@ -63,10 +63,10 @@ private static EntityManagerFactory emf;
         assertNotNull(cliente);
         assertEquals("12345678911", cliente.getCpf());
         assertEquals("Raphael", cliente.getNome());
-        assertEquals("ALO@ALO", cliente.getEmail());
-        assertEquals(1, cliente.getContatos().size());
+        assertEquals("rapha@gmail.com", cliente.getEmail());
+        assertEquals(2, cliente.getContatos().size());
         assertEquals("VISA", cliente.getCartao().getBandeira());
-        assertTrue(cliente.getContatos().contains("(81) 96905-3356"));
+        assertTrue(cliente.getContatos().contains("(81) 97654-9685"));
     }
     @Test
     public void persistCliente()
@@ -95,7 +95,7 @@ private static EntityManagerFactory emf;
         cliente.setEndereco(en);
         em.persist(cliente);
         em.flush();
-        Cliente cliente2 = em.find(Cliente.class, 2L);
+        Cliente cliente2 = em.find(Cliente.class, 3L);
         assertNotNull(cliente2);
         assertEquals("Pedrim", cliente2.getNome());
     }

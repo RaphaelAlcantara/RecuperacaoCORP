@@ -44,7 +44,7 @@ public class Loja {
     @OneToMany(mappedBy = "loja", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     protected List<Venda> vendas;
 
-    @Column(name = "TXT_CNPJ", nullable = false, length = 14, unique = true)
+    @Column(name = "TXT_CNPJ", nullable = false, length = 18, unique = true)
     protected String cnpj;
 
     @Column(name = "TXT_NOME", nullable = false, length = 255)
