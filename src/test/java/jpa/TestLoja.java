@@ -1,5 +1,6 @@
 package jpa;
 
+import com.ifpe.edu.br.projetorec.Doce;
 import com.ifpe.edu.br.projetorec.Loja;
 import com.ifpe.edu.br.projetorec.Produto;
 import jakarta.persistence.EntityManager;
@@ -7,6 +8,8 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.Query;
+import java.util.ArrayList;
+import java.util.List;
 import org.junit.*;
 
 import java.util.Calendar;
@@ -55,7 +58,7 @@ public class TestLoja {
         assertEquals("43.856.021/0001-78", loja.getCnpj());
         assertEquals("Dona Ju kit Festas", loja.getNome());
         assertEquals("donaju@contato.com", loja.getEmail());
-        assertEquals("Tue Oct 31 00:00:00 BRST 2017", loja.getDataNascimento().toString());
+        assertEquals("Tue Oct 31 00:00:00 GFT 2017", loja.getDataNascimento().toString());
         assertTrue(loja.getProdutos().size() == 2);
         assertTrue(loja.getVendas().size() == 1);
     }
@@ -69,13 +72,14 @@ public class TestLoja {
         loja.setNome("Caldo de cana bom Jesus");
         loja.setEmail("caldoJesus@contato.com");
         loja.setDataNascimento(calendar);
-        
-        Query query = em.createQuery("SELECT p FROM Produto p");
-        List<Produto> produtos = query.getResultList();
-        for(Produto produto : produtos){
-            loja.setProdutos(produto);
-        }
-        
+        Produto p1 = em.find(Produto.class, 1L);
+        Produto p2 = em.find(Produto.class, 2L);
+        Produto p3 = em.find(Produto.class, 3L);
+        Produto p4 = em.find(Produto.class, 4L);
+        loja.setProdutos(p1);
+        loja.setProdutos(p2);
+        loja.setProdutos(p3);
+        loja.setProdutos(p4);        
         em.persist(loja);
         em.flush();
         

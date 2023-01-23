@@ -82,12 +82,14 @@ public class TestVenda {
         venda.setLoja(loja);
         venda.setValor(6.0);
         venda.setPag(TipoPagamento.PIX);
-        
-        Query query = em.createQuery("SELECT p FROM Produto p");
-        List<Produto> produtos = query.getResultList();
-        for(Produto produto : produtos) {
-            venda.setProdutos(produto);
-        }
+        Produto p1 = em.find(Produto.class, 1L);
+        Produto p2 = em.find(Produto.class, 2L);
+        Produto p3 = em.find(Produto.class, 3L);
+        Produto p4 = em.find(Produto.class, 4L);
+        venda.setProdutos(p1);
+        venda.setProdutos(p2);
+        venda.setProdutos(p3);
+        venda.setProdutos(p4);
         
         em.persist(venda);
         em.flush();

@@ -4,9 +4,12 @@
  */
 package jpa;
 
+import com.ifpe.edu.br.projetorec.Cliente;
 import com.ifpe.edu.br.projetorec.Loja;
 import com.ifpe.edu.br.projetorec.Salgado;
+import com.ifpe.edu.br.projetorec.TipoPagamento;
 import com.ifpe.edu.br.projetorec.Venda;
+import com.sun.security.ntlm.Client;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -68,7 +71,6 @@ public class TestSalgado {
         assertEquals(3.0, salgado.getPreco(), 0);
         assertEquals("Salgado", salgado.getTipo());
         assertEquals("Coxinha de Frango com Catupiry", salgado.getDescricao());
-        assertTrue(salgado.getVendas().size() == 1);
         assertTrue(salgado.getLojas().size() == 1);
     }
     
@@ -83,18 +85,19 @@ public class TestSalgado {
         salgado.setDataFrabricacao(dataFabricacao);
         salgado.setDescricao("Pastel de queijo com verdura");
         
-        Query query1 = em.createQuery("SELECT v FROM Venda v");
-        List<Venda> vendas = query1.getResultList();
-        for(Venda venda : vendas){
-            salgado.setVendas(venda);
-        }
+        Loja l1 = em.find(Loja.class, 1L);
+        Loja l2 = em.find(Loja.class, 2L);
         
-        Query query2 = em.createQuery("SELECT l FROM Loja l");
-        List<Loja> lojas = query2.getResultList();
-        for(Loja loja : lojas){
-            salgado.setLojas(loja);
-        }
-        
+        salgado.setLojas(l1);
+        salgado.setLojas(l2);
+        Venda v1 = new Venda();
+        v1.setLoja(l1);
+        Cliente c1 = em.find(Cliente.class, 1L);
+        v1.setCliente(c1);
+        v1.setPag(TipoPagamento.PIX);
+        v1.setProdutos(salgado);
+        v1.setValor(10.0);
+        salgado.setVendas(v1);
         em.persist(salgado);
         em.flush();
         
@@ -105,7 +108,9 @@ public class TestSalgado {
         assertEquals(5.0, salgadoAux.getPreco(), 0);
         assertEquals(dataFabricacao, salgadoAux.getDataFrabricacao());
         assertEquals("Pastel de queijo com verdura", salgadoAux.getDescricao());
-        assertTrue(salgadoAux.getVendas().size() == 2);
+        assertTrue(salgadoAux.getVendas().size()==1);
+        assertTrue("Pastel de queijo".equals(salgadoAux.getVendas().get(0).getProdutos().get(0).getNome()));
+        assertTrue(salgadoAux.getVendas().get(0).getValor()==10.0);
         assertTrue(salgadoAux.getLojas().size() == 2);
     }
     

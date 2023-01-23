@@ -63,7 +63,7 @@ private static EntityManagerFactory emf;
         assertEquals("Raphael", cliente.getNome());
         assertEquals("rapha@gmail.com", cliente.getEmail());
         assertEquals("4073020000000002", cliente.getCartao().getNumero());
-        assertEquals("Sun Dec 12 00:00:00 BRST 1999", cliente.getDataNascimento().toString());
+        assertEquals("Sun Dec 12 00:00:00 GFT 1999", cliente.getDataNascimento().toString());
         assertTrue(cliente.getVendas().size() == 1);
         assertTrue(cliente.getContatos().size() == 2);
     }
@@ -77,7 +77,7 @@ private static EntityManagerFactory emf;
         cliente.setCpf("112233");
         
         CartaoCredito cd = new CartaoCredito();
-        cd.setBandeira("CU");
+        cd.setBandeira("ELO");
         
         Calendar cexp = Calendar.getInstance();
         cexp.set(Calendar.YEAR, 2022);

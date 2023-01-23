@@ -89,7 +89,6 @@ public class Venda {
         }
         
         this.produtos.add(produto);
-        produto.setVendas(this);
     }
 
     public Loja getLoja() {

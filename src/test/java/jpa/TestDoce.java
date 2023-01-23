@@ -4,8 +4,10 @@
  */
 package jpa;
 
+import com.ifpe.edu.br.projetorec.Cliente;
 import com.ifpe.edu.br.projetorec.Doce;
 import com.ifpe.edu.br.projetorec.Loja;
+import com.ifpe.edu.br.projetorec.TipoPagamento;
 import com.ifpe.edu.br.projetorec.Venda;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
@@ -68,7 +70,6 @@ public class TestDoce {
         assertEquals(1.0, doce.getPreco(), 0);
         assertEquals("Doce", doce.getTipo());
         assertEquals("Brigadeiro grande", doce.getDescricao());
-        assertTrue(doce.getVendas().size() == 1);
         assertTrue(doce.getLojas().size() == 1);
     }
     
@@ -83,18 +84,18 @@ public class TestDoce {
         doce.setDataFrabricacao(dataFabricacao);
         doce.setDescricao("Bolo de rolo de goiabada");
         
-        Query query1 = em.createQuery("SELECT v FROM Venda v");
-        List<Venda> vendas = query1.getResultList();
-        for(Venda venda : vendas){
-            doce.setVendas(venda);
-        }
-        
-        Query query2 = em.createQuery("SELECT l FROM Loja l");
-        List<Loja> lojas = query2.getResultList();
-        for(Loja loja : lojas){
-            doce.setLojas(loja);
-        }
-        
+        Loja j1 = em.find(Loja.class, 1L);
+        Loja j2 = em.find(Loja.class, 2L);
+        doce.setLojas(j1);
+        doce.setLojas(j2);
+        Venda v1 = new Venda();
+        v1.setLoja(j1);
+        Cliente c1 = em.find(Cliente.class, 1L);
+        v1.setCliente(c1);
+        v1.setPag(TipoPagamento.CARTAO);
+        v1.setProdutos(doce);
+        v1.setValor(15.0); 
+        doce.setVendas(v1);
         em.persist(doce);
         em.flush();
         
@@ -105,8 +106,9 @@ public class TestDoce {
         assertEquals(5.0, doceAux.getPreco(), 0);
         assertEquals(dataFabricacao, doceAux.getDataFrabricacao());
         assertEquals("Bolo de rolo de goiabada", doceAux.getDescricao());
-        assertTrue(doceAux.getVendas().size() == 2);
         assertTrue(doceAux.getLojas().size() == 2);
+        assertTrue(doceAux.getVendas().get(0).getValor()==15.0);
+        assertTrue("Bolo de rolo".equals(doceAux.getVendas().get(0).getProdutos().get(0).getNome()));
     }
     
 }

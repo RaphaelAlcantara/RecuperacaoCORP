@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: jpa.TestSalgado
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.282 sec
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.55 sec

@@ -1,9 +1,5 @@
 package jpa;
 
-/**
- *
- * @author Izavan
- */
 
 import java.io.InputStream;
 import java.sql.Connection;
