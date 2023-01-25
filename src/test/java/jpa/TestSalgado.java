@@ -9,7 +9,6 @@ import com.ifpe.edu.br.projetorec.Loja;
 import com.ifpe.edu.br.projetorec.Salgado;
 import com.ifpe.edu.br.projetorec.TipoPagamento;
 import com.ifpe.edu.br.projetorec.Venda;
-import com.sun.security.ntlm.Client;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
@@ -101,7 +100,7 @@ public class TestSalgado {
         em.persist(salgado);
         em.flush();
         
-        Salgado salgadoAux = em.find(Salgado.class, 5L);
+        Salgado salgadoAux = em.find(Salgado.class, 14L);
         assertNotNull(salgadoAux);
         assertEquals("Pastel de queijo", salgadoAux.getNome());
         assertEquals("Pastel", salgadoAux.getTipo());

@@ -104,7 +104,7 @@ private static EntityManagerFactory emf;
         em.persist(cliente);
         em.flush();
         
-        Cliente clienteAux = em.find(Cliente.class, 3L);
+        Cliente clienteAux = em.find(Cliente.class, 6L);
         assertNotNull(clienteAux);
         assertEquals("Pedrim", clienteAux.getNome());
         assertEquals("pedrim@pedrim", clienteAux.getEmail());

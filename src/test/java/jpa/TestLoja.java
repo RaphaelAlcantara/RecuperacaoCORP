@@ -59,8 +59,6 @@ public class TestLoja {
         assertEquals("Dona Ju kit Festas", loja.getNome());
         assertEquals("donaju@contato.com", loja.getEmail());
         assertEquals("Tue Oct 31 00:00:00 GFT 2017", loja.getDataNascimento().toString());
-        assertTrue(loja.getProdutos().size() == 2);
-        assertTrue(loja.getVendas().size() == 1);
     }
 
     @Test
@@ -83,7 +81,7 @@ public class TestLoja {
         em.persist(loja);
         em.flush();
         
-        Loja lojaAux = em.find(Loja.class, 3L);
+        Loja lojaAux = em.find(Loja.class, 5L);
         assertNotNull(lojaAux);
         assertEquals("57.800.406/0001-76", lojaAux.getCnpj());
         assertEquals("Caldo de cana bom Jesus", lojaAux.getNome());

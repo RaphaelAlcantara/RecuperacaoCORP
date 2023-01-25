@@ -64,7 +64,7 @@ public class TestDoce {
     
     @Test
     public void consultarDoce() {
-        Doce doce = em.find(Doce.class, 3L);
+        Doce doce = em.find(Doce.class, 6L);
         assertNotNull(doce);
         assertEquals("Brigadeiro", doce.getNome());
         assertEquals(1.0, doce.getPreco(), 0);
@@ -99,7 +99,7 @@ public class TestDoce {
         em.persist(doce);
         em.flush();
         
-        Doce doceAux = em.find(Doce.class, 5L);
+        Doce doceAux = em.find(Doce.class, 14L);
         assertNotNull(doceAux);
         assertEquals("Bolo de rolo", doceAux.getNome());
         assertEquals("Bolo", doceAux.getTipo());

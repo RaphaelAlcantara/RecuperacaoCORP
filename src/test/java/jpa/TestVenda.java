@@ -94,7 +94,7 @@ public class TestVenda {
         em.persist(venda);
         em.flush();
         
-        Venda vendaAux = em.find(Venda.class, 3L);
+        Venda vendaAux = em.find(Venda.class, 8L);
         assertNotNull(vendaAux);
         assertEquals("Raphael", vendaAux.getCliente().getNome());
         assertEquals("Dona Ju kit Festas", vendaAux.getLoja().getNome());
@@ -103,4 +103,20 @@ public class TestVenda {
         assertTrue(vendaAux.getProdutos().size() == 4);
     }
     
+    @Test
+    public void updateSomMerge()
+    {
+        Venda venda = em.find(Venda.class, 4L);
+        venda.setValor(50.0);
+        venda.getCliente().setNome("Pedrinho");
+        venda.setPag(TipoPagamento.DINHEIRO);
+        em.persist(venda);
+        em.flush();
+        Venda vendaAux = em.find(Venda.class, 4L);
+        assertNotNull(vendaAux);
+        assertEquals("Pedrinho", vendaAux.getCliente().getNome());
+        assertEquals(50.0, vendaAux.getValor(), 0);
+        assertEquals("DINHEIRO", vendaAux.getPag().toString());
+        //assertTrue(vendaAux.getProdutos().size() == 4);        
+    }
 }
