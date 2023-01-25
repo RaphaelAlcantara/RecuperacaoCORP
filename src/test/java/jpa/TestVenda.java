@@ -19,6 +19,7 @@ import org.junit.After;
 import org.junit.AfterClass;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -104,7 +105,7 @@ public class TestVenda {
     }
     
     @Test
-    public void updateSomMerge()
+    public void updateSemMerge()
     {
         Venda venda = em.find(Venda.class, 4L);
         venda.setValor(50.0);
@@ -118,5 +119,30 @@ public class TestVenda {
         assertEquals(50.0, vendaAux.getValor(), 0);
         assertEquals("DINHEIRO", vendaAux.getPag().toString());
         //assertTrue(vendaAux.getProdutos().size() == 4);        
+    }
+    @Test
+    public void updateComMerge()
+    {
+        Venda venda = em.find(Venda.class, 4L);
+        venda.setValor(32.0);
+        venda.getCliente().setNome("Marta");
+        venda.setPag(TipoPagamento.CARTAO);
+        em.merge(venda);
+        em.flush();
+        Venda vendaAux = em.find(Venda.class, 4L);
+        assertNotNull(vendaAux);
+        assertEquals("Marta", vendaAux.getCliente().getNome());
+        assertEquals(32.0, vendaAux.getValor(), 0);
+        assertEquals("CARTAO", vendaAux.getPag().toString());
+    }
+    @Test
+    public void deletarVenda()
+    {
+        Venda venda = em.find(Venda.class, 2L);
+        em.remove(venda);
+        em.flush();
+        Query queryVenda = em.createQuery("select v from Venda v where v.id=2");
+        List<Venda> auxVenda = queryVenda.getResultList();
+        assertTrue(auxVenda.isEmpty());
     }
 }
