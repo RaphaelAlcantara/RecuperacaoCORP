@@ -63,7 +63,7 @@ public class TestSalgado {
     }
     
     @Test
-    public void consultarDoce() {
+    public void consultarSalgado() {
         Salgado salgado = em.find(Salgado.class, 1L);
         assertNotNull(salgado);
         assertEquals("Coxinha", salgado.getNome());
@@ -74,7 +74,7 @@ public class TestSalgado {
     }
     
     @Test
-    public void inserirDoce() {
+    public void inserirSalgado() {
         Date dataFabricacao = Calendar.getInstance().getTime();
         
         Salgado salgado = new Salgado();
@@ -111,6 +111,49 @@ public class TestSalgado {
         assertTrue("Pastel de queijo".equals(salgadoAux.getVendas().get(0).getProdutos().get(0).getNome()));
         assertTrue(salgadoAux.getVendas().get(0).getValor()==10.0);
         assertTrue(salgadoAux.getLojas().size() == 2);
+    }
+    
+    @Test
+    public void updateSemMerge()
+    {
+        Salgado salgado = em.find(Salgado.class, 2L);
+        assertNotNull(salgado);
+        salgado.setDescricao("salgado meio doce");
+        salgado.setNome("coxinha com nozes");
+        salgado.setPreco(4.5);
+        em.persist(salgado);
+        em.flush();
+        Salgado auxSalgado = em.find(Salgado.class, 2L);
+        assertNotNull(auxSalgado);
+        assertEquals("salgado meio doce", auxSalgado.getDescricao());
+        assertEquals("coxinha com nozes", auxSalgado.getNome());
+    }
+    
+    @Test
+    public void updateComMerge()
+    {
+        Salgado salgado = em.find(Salgado.class, 3L);
+        assertNotNull(salgado);
+        salgado.setDescricao("salgadinho cheetos");
+        salgado.setNome("Salgadinho de milho");
+        salgado.setPreco(12.5);
+        em.merge(salgado);
+        em.flush();
+        Salgado auxSalgado = em.find(Salgado.class, 3L);
+        assertNotNull(auxSalgado);
+        assertEquals("salgadinho cheetos", auxSalgado.getDescricao());
+        assertEquals("Salgadinho de milho", auxSalgado.getNome());
+    }
+    @Test
+    public void deleteSalgado()
+    {
+        Salgado salgado = em.find(Salgado.class, 4L);
+        assertNotNull(salgado);
+        em.remove(salgado);
+        em.flush();
+        Query querySalgado = em.createQuery("select s from Salgado s where s.id=4");
+        List<Salgado> auxSalgado = querySalgado.getResultList();
+        assertTrue(auxSalgado.isEmpty());
     }
     
 }
