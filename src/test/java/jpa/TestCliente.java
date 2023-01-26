@@ -63,7 +63,7 @@ private static EntityManagerFactory emf;
         assertEquals("Raphael", cliente.getNome());
         assertEquals("rapha@gmail.com", cliente.getEmail());
         assertEquals("4073020000000002", cliente.getCartao().getNumero());
-        assertEquals("Sun Dec 12 00:00:00 GFT 1999", cliente.getDataNascimento().toString());
+        assertEquals("Sun Dec 31 00:00:00 BRST 2000", cliente.getDataNascimento().toString());
         assertTrue(cliente.getVendas().size() == 1);
         assertTrue(cliente.getContatos().size() == 2);
     }

@@ -110,5 +110,7 @@ public class TestDoce {
         assertTrue(doceAux.getVendas().get(0).getValor()==15.0);
         assertTrue("Bolo de rolo".equals(doceAux.getVendas().get(0).getProdutos().get(0).getNome()));
     }
+
+
     
 }
