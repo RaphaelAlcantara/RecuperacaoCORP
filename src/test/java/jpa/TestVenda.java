@@ -124,14 +124,15 @@ public class TestVenda {
     public void updateComMerge()
     {
         Venda venda = em.find(Venda.class, 4L);
+        em.clear();
         venda.setValor(32.0);
-        venda.getCliente().setNome("Marta");
+        venda.getCliente().setNome("jose");
         venda.setPag(TipoPagamento.CARTAO);
         em.merge(venda);
         em.flush();
         Venda vendaAux = em.find(Venda.class, 4L);
         assertNotNull(vendaAux);
-        assertEquals("Marta", vendaAux.getCliente().getNome());
+        assertEquals("jose", vendaAux.getCliente().getNome());
         assertEquals(32.0, vendaAux.getValor(), 0);
         assertEquals("CARTAO", vendaAux.getPag().toString());
     }

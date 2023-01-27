@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
+<testsuite tests="5" failures="0" name="jpa.TestSalgado" time="0.218" errors="0" skipped="0">
+=======
 <testsuite tests="5" failures="0" name="jpa.TestSalgado" time="0.165" errors="0" skipped="0">
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_321\jre\bin"/>
@@ -64,9 +68,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
+  <testcase classname="jpa.TestSalgado" name="consultarSalgado" time="0.044"/>
+  <testcase classname="jpa.TestSalgado" name="inserirSalgado" time="0.039"/>
+  <testcase classname="jpa.TestSalgado" name="updateComMerge" time="0.01"/>
+  <testcase classname="jpa.TestSalgado" name="deleteSalgado" time="0.125"/>
+  <testcase classname="jpa.TestSalgado" name="updateSemMerge" time="0"/>
+=======
   <testcase classname="jpa.TestSalgado" name="consultarSalgado" time="0.008"/>
   <testcase classname="jpa.TestSalgado" name="inserirSalgado" time="0.023"/>
   <testcase classname="jpa.TestSalgado" name="updateComMerge" time="0.031"/>
   <testcase classname="jpa.TestSalgado" name="deleteSalgado" time="0.1"/>
   <testcase classname="jpa.TestSalgado" name="updateSemMerge" time="0.003"/>
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
 </testsuite>

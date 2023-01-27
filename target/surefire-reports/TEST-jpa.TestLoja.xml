@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
+<testsuite tests="5" failures="0" name="jpa.TestLoja" time="0.329" errors="0" skipped="0">
+=======
 <testsuite tests="2" failures="1" name="jpa.TestLoja" time="0.027" errors="0" skipped="0">
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_321\jre\bin"/>
@@ -64,6 +68,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
+  <testcase classname="jpa.TestLoja" name="consultarLoja" time="0.048"/>
+  <testcase classname="jpa.TestLoja" name="inserirLoja" time="0.029"/>
+  <testcase classname="jpa.TestLoja" name="updateComMerge" time="0.02"/>
+  <testcase classname="jpa.TestLoja" name="deleteLoja" time="0.228"/>
+  <testcase classname="jpa.TestLoja" name="updateSemMerge" time="0.004"/>
+=======
   <testcase classname="jpa.TestLoja" name="consultarLoja" time="0.006">
     <failure message="expected:&lt;Tue Oct 31 00:00:00 [GF]T 2017&gt; but was:&lt;Tue Oct 31 00:00:00 [BRS]T 2017&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Tue Oct 31 00:00:00 [GF]T 2017&gt; but was:&lt;Tue Oct 31 00:00:00 [BRS]T 2017&gt;
 	at org.junit.Assert.assertEquals(Assert.java:117)
@@ -208,4 +219,5 @@
 </system-out>
   </testcase>
   <testcase classname="jpa.TestLoja" name="inserirLoja" time="0.021"/>
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
 </testsuite>

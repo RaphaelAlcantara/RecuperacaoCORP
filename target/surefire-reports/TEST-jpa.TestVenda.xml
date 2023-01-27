@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
+<testsuite tests="5" failures="0" name="jpa.TestVenda" time="0.264" errors="0" skipped="0">
+=======
 <testsuite tests="5" failures="0" name="jpa.TestVenda" time="0.069" errors="0" skipped="0">
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_321\jre\bin"/>
@@ -64,9 +68,17 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
+  <testcase classname="jpa.TestVenda" name="consultarVenda" time="0.058"/>
+  <testcase classname="jpa.TestVenda" name="updateComMerge" time="0.009"/>
+  <testcase classname="jpa.TestVenda" name="inserirVenda" time="0.055"/>
+  <testcase classname="jpa.TestVenda" name="deletarVenda" time="0.134"/>
+  <testcase classname="jpa.TestVenda" name="updateSemMerge" time="0.008"/>
+=======
   <testcase classname="jpa.TestVenda" name="consultarVenda" time="0.021"/>
   <testcase classname="jpa.TestVenda" name="updateComMerge" time="0.01"/>
   <testcase classname="jpa.TestVenda" name="inserirVenda" time="0.024"/>
   <testcase classname="jpa.TestVenda" name="deletarVenda" time="0.01"/>
   <testcase classname="jpa.TestVenda" name="updateSemMerge" time="0.004"/>
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
 </testsuite>

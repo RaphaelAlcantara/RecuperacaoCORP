@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: jpa.TestVenda
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.965 sec
+=======
 Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.516 sec
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d

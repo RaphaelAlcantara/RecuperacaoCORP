@@ -89,5 +89,45 @@ public class TestLoja {
         assertEquals(calendar, lojaAux.getDataNascimento());
         assertTrue(lojaAux.getProdutos().size() == 4);
     }
+    
+    @Test
+    public void updateSemMerge()
+    {
+        Loja loja = em.find(Loja.class, 3L);
+        loja.setCnpj("999.999");
+        loja.setNome("CoxinhasLTDA");
+        loja.setEmail("seuze@seuze");
+        em.persist(loja);
+        em.flush();
+        Loja auxLoja = em.find(Loja.class, 3L);
+        assertEquals("999.999", auxLoja.getCnpj());
+        assertEquals("CoxinhasLTDA", auxLoja.getNome());
+        assertEquals("seuze@seuze", auxLoja.getEmail());
+    }
+    @Test
+    public void updateComMerge()
+    {
+        Loja loja = em.find(Loja.class, 3L);
+        em.clear();
+        loja.setCnpj("1234.1234");
+        loja.setNome("SonhodosDoces");
+        loja.setEmail("Maria@jose");
+        em.merge(loja);
+        em.flush();
+        Loja auxLoja = em.find(Loja.class, 3L);
+        assertEquals("1234.1234", auxLoja.getCnpj());
+        assertEquals("SonhodosDoces", auxLoja.getNome());
+        assertEquals("Maria@jose", auxLoja.getEmail());
+    }
+    @Test
+    public void deleteLoja()
+    {
+        Loja loja = em.find(Loja.class, 2L);
+        em.remove(loja);
+        em.flush();
+        Query query = em.createQuery("select l from Loja l where l.id=2");
+        List<Loja> lista = query.getResultList();
+        assertTrue(lista.isEmpty());
+    }
 
 }
