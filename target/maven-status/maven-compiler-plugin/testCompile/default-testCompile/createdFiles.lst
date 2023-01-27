@@ -1,2 +1,6 @@
-jpa\TestCliente.class
+jpa\TestDoce.class
+jpa\TestLoja.class
 jpa\DbUnitUtil.class
+jpa\TestSalgado.class
+jpa\TestVenda.class
+jpa\TestCliente.class

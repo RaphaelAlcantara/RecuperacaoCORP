@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+<<<<<<< HEAD
 <testsuite tests="5" failures="0" name="jpa.TestLoja" time="0.329" errors="0" skipped="0">
+=======
+<testsuite tests="2" failures="1" name="jpa.TestLoja" time="0.027" errors="0" skipped="0">
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
-    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\bin"/>
-    <property name="java.vm.version" value="25.111-b14"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_321\jre\bin"/>
+    <property name="java.vm.version" value="25.321-b07"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="C:\Users\gabri\OneDrive\Documentos\Workspaces IDEs\RECUPERACAO\RecuperacaoCORP"/>
+    <property name="maven.multiModuleProjectDirectory" value="C:\Users\rapha\Desktop\RecuperacaoCORP"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=";"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -15,47 +19,46 @@
     <property name="user.country" value="BR"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value=""/>
-    <property name="test" value="jpa.TestLoja"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="C:\Users\gabri\OneDrive\Documentos\Workspaces IDEs\RECUPERACAO\RecuperacaoCORP"/>
-    <property name="java.runtime.version" value="1.8.0_111-b14"/>
+    <property name="user.dir" value="C:\Users\rapha\Desktop\RecuperacaoCORP"/>
+    <property name="java.runtime.version" value="1.8.0_321-b07"/>
     <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
-    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\endorsed"/>
+    <property name="java.endorsed.dirs" value="C:\Program Files\Java\jdk1.8.0_321\jre\lib\endorsed"/>
     <property name="os.arch" value="amd64"/>
-    <property name="java.io.tmpdir" value="C:\Users\gabri\AppData\Local\Temp\"/>
+    <property name="java.io.tmpdir" value="C:\Users\rapha\AppData\Local\Temp\"/>
     <property name="line.separator" value="
 "/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="user.variant" value=""/>
-    <property name="os.name" value="Windows 10"/>
+    <property name="os.name" value="Windows 11"/>
     <property name="maven.ext.class.path" value="C:\Program Files\NetBeans-14\netbeans\java\maven-nblib\netbeans-eventspy.jar"/>
     <property name="classworlds.conf" value="C:\Program Files\NetBeans-14\netbeans\java\maven\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_111\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python310\Scripts\;C:\Python310\;C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Users\gabri\AppData\Local\Microsoft\WindowsApps;;C:\Users\gabri\AppData\Local\Programs\Microsoft VS Code\bin;C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin;;C:\Users\gabri\AppData\Roaming\npm;C:\Program Files\JetBrains\PyCharm 2022.2.3\bin;;."/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk1.8.0_321\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Program Files (x86)\Common Files\Intel\Shared Libraries\redist\intel64\compiler;C:\app\rapha\product\21c\dbhomeXE\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;%JAVA_HOME%\bin;C:\Users\rapha\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\rapha\anaconda3\etc\jupyter;;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\nodejs\;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\rapha\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_321\bin;C:\Users\rapha\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\rapha\anaconda3\etc\jupyter;C:\Users\rapha\AppData\Local\Programs\Python\Python310\Scripts;C:\Users\rapha\AppData\Roaming\npm;C:\Program Files\JetBrains\DataSpell 2022.2.3\bin;C:\Users\rapha\AppData\Local\JetBrains\Toolbox\scripts;;."/>
     <property name="maven.conf" value="C:\Program Files\NetBeans-14\netbeans\java\maven/conf"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.class.version" value="52.0"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="os.version" value="10.0"/>
     <property name="library.jansi.path" value="C:\Program Files\NetBeans-14\netbeans\java\maven\lib\jansi-native"/>
-    <property name="user.home" value="C:\Users\gabri"/>
-    <property name="user.timezone" value="America/Cayenne"/>
+    <property name="user.home" value="C:\Users\rapha"/>
+    <property name="user.timezone" value="America/Sao_Paulo"/>
     <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
     <property name="java.specification.version" value="1.8"/>
     <property name="file.encoding" value="UTF-8"/>
-    <property name="user.name" value="gabri"/>
+    <property name="user.name" value="rapha"/>
     <property name="java.class.path" value="C:\Program Files\NetBeans-14\netbeans\java\maven\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="1.8"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_111\jre"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dtest=jpa.TestLoja -Dmaven.ext.class.path=C:\Program Files\NetBeans-14\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 surefire:test"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk1.8.0_321\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -Dmaven.ext.class.path=C:\Program Files\NetBeans-14\netbeans\java\maven-nblib\netbeans-eventspy.jar -Dfile.encoding=UTF-8 clean install"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
     <property name="user.language" value="pt"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
     <property name="java.vm.info" value="mixed mode"/>
-    <property name="java.version" value="1.8.0_111"/>
-    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
-    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_111\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_111\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_111\jre\classes"/>
+    <property name="java.version" value="1.8.0_321"/>
+    <property name="java.ext.dirs" value="C:\Program Files\Java\jdk1.8.0_321\jre\lib\ext;C:\WINDOWS\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="C:\Program Files\Java\jdk1.8.0_321\jre\lib\resources.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\rt.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\sunrsasign.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\jsse.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\jce.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\charsets.jar;C:\Program Files\Java\jdk1.8.0_321\jre\lib\jfr.jar;C:\Program Files\Java\jdk1.8.0_321\jre\classes"/>
     <property name="java.vendor" value="Oracle Corporation"/>
     <property name="maven.home" value="C:\Program Files\NetBeans-14\netbeans\java\maven"/>
     <property name="file.separator" value="\"/>
@@ -65,9 +68,156 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
+<<<<<<< HEAD
   <testcase classname="jpa.TestLoja" name="consultarLoja" time="0.048"/>
   <testcase classname="jpa.TestLoja" name="inserirLoja" time="0.029"/>
   <testcase classname="jpa.TestLoja" name="updateComMerge" time="0.02"/>
   <testcase classname="jpa.TestLoja" name="deleteLoja" time="0.228"/>
   <testcase classname="jpa.TestLoja" name="updateSemMerge" time="0.004"/>
+=======
+  <testcase classname="jpa.TestLoja" name="consultarLoja" time="0.006">
+    <failure message="expected:&lt;Tue Oct 31 00:00:00 [GF]T 2017&gt; but was:&lt;Tue Oct 31 00:00:00 [BRS]T 2017&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;Tue Oct 31 00:00:00 [GF]T 2017&gt; but was:&lt;Tue Oct 31 00:00:00 [BRS]T 2017&gt;
+	at org.junit.Assert.assertEquals(Assert.java:117)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at jpa.TestLoja.consultarLoja(TestLoja.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.internal.runners.statements.RunBefores.evaluate(RunBefores.java:26)
+	at org.junit.internal.runners.statements.RunAfters.evaluate(RunAfters.java:27)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+</failure>
+    <system-out>[EL Fine]: connection: 2023-01-26 17:58:45.527--ServerSession(659590237)--Connection(1070044969)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: connection: 2023-01-26 17:58:45.528--ServerSession(659590237)--Thread(Thread[main,5,main])--/file:/C:/Users/rapha/Desktop/RecuperacaoCORP/target/classes/_lanchePU logout successful
+[EL Fine]: connection: 2023-01-26 17:58:45.528--ServerSession(659590237)--Connection(949767857)--Thread(Thread[main,5,main])--disconnect
+[EL Fine]: moxy: 2023-01-26 17:58:45.531--Thread(Thread[main,5,main])--SAXParserFactory instance: com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl@5c2375a9
+[EL Fine]: server: 2023-01-26 17:58:45.534--Thread(Thread[main,5,main])--Configured server platform: org.eclipse.persistence.platform.server.NoServerPlatform
+[EL Config]: metadata: 2023-01-26 17:58:45.547--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Venda] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.547--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field cliente] is being defaulted to: class com.ifpe.edu.br.projetorec.Cliente.
+[EL Config]: metadata: 2023-01-26 17:58:45.547--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field produtos] is being defaulted to: class com.ifpe.edu.br.projetorec.Produto.
+[EL Config]: metadata: 2023-01-26 17:58:45.548--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to one mapping element [field loja] is being defaulted to: class com.ifpe.edu.br.projetorec.Loja.
+[EL Config]: metadata: 2023-01-26 17:58:45.548--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Loja] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.548--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field produtos] is being defaulted to: class com.ifpe.edu.br.projetorec.Produto.
+[EL Config]: metadata: 2023-01-26 17:58:45.548--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field vendas] is being defaulted to: class com.ifpe.edu.br.projetorec.Venda.
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Produto] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field vendas] is being defaulted to: class com.ifpe.edu.br.projetorec.Venda.
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the many to many mapping element [field lojas] is being defaulted to: class com.ifpe.edu.br.projetorec.Loja.
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Doce] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Cliente] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field cartao] is being defaulted to: class com.ifpe.edu.br.projetorec.CartaoCredito.
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target class (reference) class for the element collection mapping element [field contatos] is being defaulted to: class java.lang.String.
+[EL Config]: metadata: 2023-01-26 17:58:45.549--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to many mapping element [field vendas] is being defaulted to: class com.ifpe.edu.br.projetorec.Venda.
+[EL Config]: metadata: 2023-01-26 17:58:45.55--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.CartaoCredito] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.55--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target entity (reference) class for the one to one mapping element [field dono] is being defaulted to: class com.ifpe.edu.br.projetorec.Cliente.
+[EL Config]: metadata: 2023-01-26 17:58:45.55--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Salgado] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.55--ServerSession(1814827909)--Thread(Thread[main,5,main])--The access type for the persistent class [class com.ifpe.edu.br.projetorec.Endereco] is set to [FIELD].
+[EL Config]: metadata: 2023-01-26 17:58:45.55--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Venda] is being defaulted to: Venda.
+[EL Config]: metadata: 2023-01-26 17:58:45.551--ServerSession(1814827909)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.551--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Loja] is being defaulted to: Loja.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Doce] is being defaulted to: Doce.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Produto] is being defaulted to: Produto.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Cliente] is being defaulted to: Cliente.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.CartaoCredito] is being defaulted to: CartaoCredito.
+[EL Config]: metadata: 2023-01-26 17:58:45.552--ServerSession(1814827909)--Thread(Thread[main,5,main])--The column name for element [id] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.553--ServerSession(1814827909)--Thread(Thread[main,5,main])--The alias name for the entity class [class com.ifpe.edu.br.projetorec.Salgado] is being defaulted to: Salgado.
+[EL Config]: metadata: 2023-01-26 17:58:45.553--ServerSession(1814827909)--Thread(Thread[main,5,main])--The primary key column name for the mapping element [field contatos] is being defaulted to: ID.
+[EL Fine]: metadata: 2023-01-26 17:58:45.553--Thread(Thread[main,5,main])--java.lang.ClassNotFoundException: java.util.Collectionjava.lang.String
+[EL Config]: metadata: 2023-01-26 17:58:45.553--ServerSession(1814827909)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field produtos] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.553--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field produtos] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.554--ServerSession(1814827909)--Thread(Thread[main,5,main])--The source primary key column name for the many to many mapping [field produtos] is being defaulted to: ID.
+[EL Config]: metadata: 2023-01-26 17:58:45.554--ServerSession(1814827909)--Thread(Thread[main,5,main])--The target primary key column name for the many to many mapping [field produtos] is being defaulted to: ID.
+[EL Info]: 2023-01-26 17:58:45.557--ServerSession(1814827909)--Thread(Thread[main,5,main])--EclipseLink, version: Eclipse Persistence Services - 3.0.2.v202107160933
+[EL Fine]: connection: 2023-01-26 17:58:45.557--ServerSession(1814827909)--Connection(557023099)--Thread(Thread[main,5,main])--connecting(DatabaseLogin(
+	platform=&gt;DerbyPlatform
+	user name=&gt; &quot;root&quot;
+	datasource URL=&gt; &quot;jdbc:derby://localhost:1527/LANCHE;create=true&quot;
+))
+[EL Config]: connection: 2023-01-26 17:58:45.56--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--Connected: jdbc:derby://localhost:1527/LANCHE;create=true
+	User: root
+	Database: Apache Derby  Version: 10.14.2.0 - (1828579)
+	Driver: Apache Derby Network Client JDBC Driver  Version: 10.14.2.0 - (1828579)
+[EL Warning]: metadata: 2023-01-26 17:58:45.56--ServerSession(1814827909)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cliente] for the entity class [class com.ifpe.edu.br.projetorec.Venda] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2023-01-26 17:58:45.56--ServerSession(1814827909)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [loja] for the entity class [class com.ifpe.edu.br.projetorec.Venda] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2023-01-26 17:58:45.56--ServerSession(1814827909)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [dono] for the entity class [class com.ifpe.edu.br.projetorec.CartaoCredito] since weaving was not enabled or did not occur.
+[EL Warning]: metadata: 2023-01-26 17:58:45.561--ServerSession(1814827909)--Thread(Thread[main,5,main])--Reverting the lazy setting on the OneToOne or ManyToOne attribute [cartao] for the entity class [class com.ifpe.edu.br.projetorec.Cliente] since weaving was not enabled or did not occur.
+[EL Fine]: connection: 2023-01-26 17:58:45.564--ServerSession(1814827909)--Thread(Thread[main,5,main])--/file:/C:/Users/rapha/Desktop/RecuperacaoCORP/target/classes/_lanchePU login successful
+[EL Fine]: sql: 2023-01-26 17:58:45.565--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA DROP CONSTRAINT TB_VENDAID_CLIENTE
+[EL Fine]: sql: 2023-01-26 17:58:45.606--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA DROP CONSTRAINT TB_VENDA_ID_LOJA
+[EL Fine]: sql: 2023-01-26 17:58:45.64--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_DOCE DROP CONSTRAINT TB_DOCE_ID_PRODUTO
+[EL Fine]: sql: 2023-01-26 17:58:45.642--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_CARTAOCREDITO DROP CONSTRAINT TBCRTCREDITODCLNTE
+[EL Fine]: sql: 2023-01-26 17:58:45.674--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_SALGADO DROP CONSTRAINT TBSALGADOIDPRODUTO
+[EL Fine]: sql: 2023-01-26 17:58:45.675--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA_PRODUTO DROP CONSTRAINT TBVNDAPRODUTODVNDA
+[EL Fine]: sql: 2023-01-26 17:58:45.707--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA_PRODUTO DROP CONSTRAINT TBVNDPRODUTODPRDTO
+[EL Fine]: sql: 2023-01-26 17:58:45.74--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_LOJA_PRODUTO DROP CONSTRAINT TBLOJAPRODUTODLOJA
+[EL Fine]: sql: 2023-01-26 17:58:45.774--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_LOJA_PRODUTO DROP CONSTRAINT TBLJPRODUTODPRDUTO
+[EL Fine]: sql: 2023-01-26 17:58:45.817--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_CONTATOS DROP CONSTRAINT TBCONTATOSDCLIENTE
+[EL Fine]: sql: 2023-01-26 17:58:45.851--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_VENDA
+[EL Fine]: sql: 2023-01-26 17:58:45.93--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_LOJA
+[EL Fine]: sql: 2023-01-26 17:58:46.04--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_PRODUTO
+[EL Fine]: sql: 2023-01-26 17:58:46.107--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_DOCE
+[EL Fine]: sql: 2023-01-26 17:58:46.189--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_CLIENTE
+[EL Fine]: sql: 2023-01-26 17:58:46.296--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_CARTAOCREDITO
+[EL Fine]: sql: 2023-01-26 17:58:46.374--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_SALGADO
+[EL Fine]: sql: 2023-01-26 17:58:46.451--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_VENDA_PRODUTO
+[EL Fine]: sql: 2023-01-26 17:58:46.518--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_LOJA_PRODUTO
+[EL Fine]: sql: 2023-01-26 17:58:46.587--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--DROP TABLE TB_CONTATOS
+[EL Fine]: sql: 2023-01-26 17:58:46.643--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_VENDA (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_TIPO_PAGAMENTO VARCHAR(20) NOT NULL, TXT_VALOR FLOAT NOT NULL, ID_CLIENTE BIGINT, ID_LOJA BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-01-26 17:58:46.741--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_LOJA (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_CNPJ VARCHAR(18) NOT NULL UNIQUE, DT_NASCIMENTO DATE, TXT_EMAIL VARCHAR(50) NOT NULL, TXT_NOME VARCHAR(255) NOT NULL, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-01-26 17:58:46.933--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_PRODUTO (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, DISC_PRODUTO VARCHAR(1), TXT_NOME VARCHAR(50) NOT NULL, TXT_PRECO FLOAT NOT NULL, TXT_TIPO VARCHAR(50) NOT NULL, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-01-26 17:58:47.055--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_DOCE (ID_PRODUTO BIGINT NOT NULL, TXT_DATAFABRICACAO DATE, TXT_DESCRICAO VARCHAR(50), PRIMARY KEY (ID_PRODUTO))
+[EL Fine]: sql: 2023-01-26 17:58:47.166--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_CLIENTE (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_CPF VARCHAR(14) NOT NULL UNIQUE, DT_NASCIMENTO DATE, TXT_EMAIL VARCHAR(50) NOT NULL, TXT_NOME VARCHAR(255) NOT NULL, END_TXT_BAIRRO VARCHAR(255) NOT NULL, END_TXT_CEP VARCHAR(255) NOT NULL, END_TXT_CIDADE VARCHAR(255) NOT NULL, END_NUMERO VARCHAR(255) NOT NULL, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-01-26 17:58:47.541--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_CARTAOCREDITO (ID BIGINT GENERATED BY DEFAULT AS IDENTITY NOT NULL, TXT_BANDEIRA VARCHAR(100) NOT NULL, DT_EXPIRACAO DATE NOT NULL, TXT_NUMERO VARCHAR(30) NOT NULL, ID_CLIENTE BIGINT, PRIMARY KEY (ID))
+[EL Fine]: sql: 2023-01-26 17:58:47.656--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_SALGADO (ID_PRODUTO BIGINT NOT NULL, TXT_DATAFABRICACAO DATE, TXT_DESCRICAO VARCHAR(50), PRIMARY KEY (ID_PRODUTO))
+[EL Fine]: sql: 2023-01-26 17:58:47.863--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_VENDA_PRODUTO (ID_VENDA BIGINT NOT NULL, ID_PRODUTO BIGINT NOT NULL, PRIMARY KEY (ID_VENDA, ID_PRODUTO))
+[EL Fine]: sql: 2023-01-26 17:58:47.963--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_LOJA_PRODUTO (ID_LOJA BIGINT NOT NULL, ID_PRODUTO BIGINT NOT NULL, PRIMARY KEY (ID_LOJA, ID_PRODUTO))
+[EL Fine]: sql: 2023-01-26 17:58:48.097--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--CREATE TABLE TB_CONTATOS (ID_CLIENTE BIGINT NOT NULL, TXT_NUM_CONTATOS VARCHAR(20) NOT NULL)
+[EL Fine]: sql: 2023-01-26 17:58:48.133--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA ADD CONSTRAINT TB_VENDAID_CLIENTE FOREIGN KEY (ID_CLIENTE) REFERENCES TB_CLIENTE (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.218--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA ADD CONSTRAINT TB_VENDA_ID_LOJA FOREIGN KEY (ID_LOJA) REFERENCES TB_LOJA (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.296--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_DOCE ADD CONSTRAINT TB_DOCE_ID_PRODUTO FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.298--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_CARTAOCREDITO ADD CONSTRAINT TBCRTCREDITODCLNTE FOREIGN KEY (ID_CLIENTE) REFERENCES TB_CLIENTE (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.362--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_SALGADO ADD CONSTRAINT TBSALGADOIDPRODUTO FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.364--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA_PRODUTO ADD CONSTRAINT TBVNDAPRODUTODVNDA FOREIGN KEY (ID_VENDA) REFERENCES TB_VENDA (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.44--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_VENDA_PRODUTO ADD CONSTRAINT TBVNDPRODUTODPRDTO FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.508--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_LOJA_PRODUTO ADD CONSTRAINT TBLOJAPRODUTODLOJA FOREIGN KEY (ID_LOJA) REFERENCES TB_LOJA (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.574--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_LOJA_PRODUTO ADD CONSTRAINT TBLJPRODUTODPRDUTO FOREIGN KEY (ID_PRODUTO) REFERENCES TB_PRODUTO (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.673--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--ALTER TABLE TB_CONTATOS ADD CONSTRAINT TBCONTATOSDCLIENTE FOREIGN KEY (ID_CLIENTE) REFERENCES TB_CLIENTE (ID)
+[EL Fine]: sql: 2023-01-26 17:58:48.861--ServerSession(1814827909)--Connection(45822040)--Thread(Thread[main,5,main])--SELECT ID, TXT_CNPJ, DT_NASCIMENTO, TXT_EMAIL, TXT_NOME FROM TB_LOJA WHERE (ID = ?)
+	bind =&gt; [1]
+</system-out>
+  </testcase>
+  <testcase classname="jpa.TestLoja" name="inserirLoja" time="0.021"/>
+>>>>>>> 25539cf843b29c8ad9c710270e2069a00ba3f71d
 </testsuite>
