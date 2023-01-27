@@ -4,6 +4,7 @@
  */
 package com.ifpe.edu.br.projetorec;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -36,7 +37,7 @@ public class Venda {
     @Column(name = "TXT_TIPO_PAGAMENTO", nullable = false, length = 20)
     private TipoPagamento pag;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinColumn(name = "ID_CLIENTE", referencedColumnName = "ID")
     private Cliente cliente;
 

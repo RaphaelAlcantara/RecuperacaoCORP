@@ -133,6 +133,7 @@ public class TestSalgado {
     public void updateComMerge()
     {
         Salgado salgado = em.find(Salgado.class, 3L);
+        em.clear();
         assertNotNull(salgado);
         salgado.setDescricao("salgadinho cheetos");
         salgado.setNome("Salgadinho de milho");
