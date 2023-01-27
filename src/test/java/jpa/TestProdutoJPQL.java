@@ -1,5 +1,6 @@
 package jpa;
 
+import com.ifpe.edu.br.projetorec.Loja;
 import com.ifpe.edu.br.projetorec.Produto;
 import jakarta.persistence.*;
 import org.junit.*;
@@ -85,8 +86,8 @@ public class TestProdutoJPQL {
     }
 
     @Test
-    public void QuantidadeLojasComProduto(){
-        logger.info("Executando QuantidadeLojasComProduto()");
+    public void QuantidadeProdutosNaLoja(){
+        logger.info("Executando QuantidadeProdutosNaLoja()");
         TypedQuery<Produto> query = em.createQuery("SELECT p FROM Produto p WHERE p.lojas IS NOT EMPTY", Produto.class);
         List<Produto> produtos = query.getResultList();
 
@@ -138,6 +139,66 @@ public class TestProdutoJPQL {
         Double valorMedio = query.getSingleResult();
 
         assertEquals(2.6, valorMedio, 0.0001);
+    }
+
+    @Test
+    //group by
+    public void ValorTotalProdutosPorTipo(){
+        logger.info("Executando ValorTotalProdutosPorTipo()");
+        TypedQuery<Object[]> query = em.createQuery("SELECT p.tipo, SUM(p.preco) FROM Produto p GROUP BY p.tipo", Object[].class);
+        List<Object[]> resultado = query.getResultList();
+
+        resultado.forEach(r -> logger.info(r[0] + " - " + r[1]));
+
+                assertEquals(2, resultado.size());
+    }
+
+    //having
+    @Test
+    public void ValorTotalProdutosPorTipoComFiltro(){
+        logger.info("Executando ValorTotalProdutosPorTipoComFiltro()");
+        TypedQuery<Object[]> query = em.createQuery("SELECT p.tipo, SUM(p.preco) FROM Produto p GROUP BY p.tipo HAVING SUM(p.preco) > 10", Object[].class);
+        List<Object[]> resultado = query.getResultList();
+
+        resultado.forEach(r -> logger.info(r[0] + " - " + r[1]));
+
+                assertEquals(2, resultado.size());
+    }
+
+    //inner join
+    @Test
+    public void ProdutosPorLoja(){
+        logger.info("Executando ProdutosPorLoja()");
+        TypedQuery<Object[]> query = em.createQuery("SELECT l.nome, p.nome FROM Loja l INNER JOIN l.produtos p", Object[].class);
+        List<Object[]> resultado = query.getResultList();
+
+        resultado.forEach(r -> logger.info(r[0] + " - " + r[1]));
+
+                assertEquals(13, resultado.size());
+    }
+
+    //left join
+    @Test
+    public void ProdutosPorLojaComLeftJoin(){
+        logger.info("Executando ProdutosPorLojaComLeftJoin()");
+        TypedQuery<Object[]> query = em.createQuery("SELECT l.nome, p.nome FROM Loja l LEFT JOIN l.produtos p", Object[].class);
+        List<Object[]> resultado = query.getResultList();
+
+        resultado.forEach(r -> logger.info(r[0] + " - " + r[1]));
+
+                assertEquals(15, resultado.size());
+    }
+
+   //join fetch
+    @Test
+    public void ProdutosPorLojaComJoinFetch(){
+        logger.info("Executando ProdutosPorLojaComJoinFetch()");
+        TypedQuery<Loja> query = em.createQuery("SELECT DISTINCT l FROM Loja l JOIN FETCH l.produtos", Loja.class);
+        List<Loja> lojas = query.getResultList();
+
+        lojas.forEach(l -> logger.info(l.getNome() + " - " + l.getProdutos().size()));
+
+                assertEquals(2, lojas.size());
     }
 
 }
