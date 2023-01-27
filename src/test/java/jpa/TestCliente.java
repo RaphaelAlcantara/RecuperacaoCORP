@@ -11,7 +11,9 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.Query;
 import java.util.Calendar;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -63,7 +65,7 @@ private static EntityManagerFactory emf;
         assertEquals("Raphael", cliente.getNome());
         assertEquals("rapha@gmail.com", cliente.getEmail());
         assertEquals("4073020000000002", cliente.getCartao().getNumero());
-        assertEquals("Sun Dec 31 00:00:00 BRST 2000", cliente.getDataNascimento().toString());
+        assertEquals("Sun Dec 31 00:00:00 GFT 2000", cliente.getDataNascimento().toString());
         assertTrue(cliente.getVendas().size() == 1);
         assertTrue(cliente.getContatos().size() == 2);
     }
@@ -114,5 +116,53 @@ private static EntityManagerFactory emf;
         assertEquals("Tejipio", clienteAux.getEndereco().getBairro());
         assertTrue(clienteAux.getContatos().size() == 2);
     }
+    
+    @Test
+    public void updateSemMerge()
+    {
+        Cliente cliente = em.find(Cliente.class, 2L);
+        assertNotNull(cliente);
+        cliente.setCpf("123123123");
+        cliente.setEmail("mudou@mudou");
+        cliente.setNome("mudança");
+        em.persist(cliente);
+        em.flush();
+        Cliente auxCliente = em.find(Cliente.class,2L);
+        assertNotNull(auxCliente);
+        assertEquals("123123123", auxCliente.getCpf());
+        assertEquals("mudou@mudou", auxCliente.getEmail());
+        assertEquals("mudança", auxCliente.getNome());        
+    }
+    
+    @Test
+    public void updateComMerge()
+    {
+        Cliente cliente = em.find(Cliente.class, 2L);
+        em.clear();
+        assertNotNull(cliente);
+        cliente.setCpf("00000000");
+        cliente.setEmail("merge@merge");
+        cliente.setNome("novamudança");
+        em.merge(cliente);
+        em.flush();
+        Cliente auxCliente = em.find(Cliente.class, 2L);
+        assertNotNull(auxCliente);
+        assertEquals("00000000", auxCliente.getCpf());
+        assertEquals("merge@merge", auxCliente.getEmail());
+        assertEquals("novamudança", auxCliente.getNome());        
+    }
+    
+    @Test
+    public void deleteCliente()
+    {
+        Cliente cliente = em.find(Cliente.class, 3L);
+        assertNotNull(cliente);
+        em.remove(cliente);
+        em.flush();
+        Query queryCliente = em.createQuery("select c from Cliente c where c.id=3");
+        List<Cliente> lista = queryCliente.getResultList();
+        assertTrue(lista.isEmpty());
+    }
+    
     
 }

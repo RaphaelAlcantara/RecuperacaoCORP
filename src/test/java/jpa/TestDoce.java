@@ -111,6 +111,50 @@ public class TestDoce {
         assertTrue("Bolo de rolo".equals(doceAux.getVendas().get(0).getProdutos().get(0).getNome()));
     }
 
+    @Test
+    public void updateSemMerge()
+    {
+        Doce doce = em.find(Doce.class, 8L);
+        assertNotNull(doce);
+        doce.setDescricao("Doce meio salgado");
+        doce.setNome("Queijadinha");
+        doce.setPreco(5.0);
+        em.persist(doce);
+        em.flush();
+        Doce auxDoce = em.find(Doce.class, 8L);
+        assertNotNull(auxDoce);
+        assertEquals("Doce meio salgado", auxDoce.getDescricao());
+        assertEquals("Queijadinha", auxDoce.getNome());
+        assertTrue(auxDoce.getPreco()==5.0);
+    }
+    
+    @Test
+    public void updateComMerge()
+    {
+        Doce doce = em.find(Doce.class, 9L);
+        em.clear();
+        assertNotNull(doce);
+        doce.setDescricao("Docinho de Goiaba");
+        doce.setNome("Goiabada Bauduco");
+        doce.setPreco(3.4);
+        em.merge(doce);
+        em.flush();
+        Doce auxDoce = em.find(Doce.class, 9L);
+        assertNotNull(auxDoce);
+        assertEquals("Docinho de Goiaba", auxDoce.getDescricao());
+        assertEquals("Goiabada Bauduco", auxDoce.getNome());
+    }
+    @Test
+    public void deleteSalgado()
+    {
+        Doce doce = em.find(Doce.class, 7L);
+        assertNotNull(doce);
+        em.remove(doce);
+        em.flush();
+        Query queryDoce = em.createQuery("select d from Doce d where d.id=7");
+        List<Doce> auxDoce = queryDoce.getResultList();
+        assertTrue(auxDoce.isEmpty());
+    }
 
     
 }

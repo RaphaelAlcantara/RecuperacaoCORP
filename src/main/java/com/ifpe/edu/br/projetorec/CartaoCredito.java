@@ -93,7 +93,7 @@ public class CartaoCredito implements Serializable  {
         return hash;
     }
 
-    @Override
+    /*@Override
     public boolean equals(Object object) {
         if (!(object instanceof Cliente)) {
             return false;
@@ -107,6 +107,6 @@ public class CartaoCredito implements Serializable  {
     @Override
     public String toString() {
         return "CartaoCredito{" + "id=" + id + '}';
-    }
+    }*/
     
 }
